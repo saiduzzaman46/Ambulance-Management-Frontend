@@ -1,19 +1,19 @@
 "use client";
-import { useEffect } from "react";
+// import { useEffect } from "react";
 import Link from "next/link";
-import { useState } from "react";
+// import { useState } from "react";
 
 export const AdminHeader = () => {
-  const [name, setName] = useState("");
+  // const [name, setName] = useState("");
 
-  useEffect(() => {
-    const storedUser = localStorage.getItem("admin");
-    // console.log(storedUser);
-    if (storedUser) {
-      const admin = JSON.parse(storedUser);
-      setName(`${admin.FIRST_NAME} ${admin.LAST_NAME}`);
-    }
-  }, []);
+  // useEffect(() => {
+  //   const storedUser = localStorage.getItem("admin");
+  //   // console.log(storedUser);
+  //   if (storedUser) {
+  //     const admin = JSON.parse(storedUser);
+  //     setName(`${admin.FIRST_NAME} ${admin.LAST_NAME}`);
+  //   }
+  // }, []);
   return (
     <header className="flex justify-between items-center pb-6 border-b border-gray-300 mb-6 ">
       <div className="relative flex-1 max-w-sm mr-4">
@@ -62,7 +62,8 @@ export const AdminHeader = () => {
               href="/dashboardadmin/profile"
               className="font-semibold text-sm"
             >
-              {name || "Guest"}
+              {/* {name || "Guest"} */}
+              Admin Name
             </Link>
             <p className="text-xs text-gray-500">Admin</p>
           </div>

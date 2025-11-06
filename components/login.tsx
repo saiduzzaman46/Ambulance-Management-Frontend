@@ -17,29 +17,39 @@ export const LoginForm = () => {
       return;
     }
 
-    try {
-      const res = await fetch("http://localhost:5000/auth/login", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ username, password }),
-      });
-
-      if (!res.ok) {
-        setError("Invalid username or password");
-        return; // ❌ stop here, no redirect
-      }
-
-      const data = await res.json();
-
-      // Save USER_ID in localStorage
-      localStorage.setItem("user", JSON.stringify(data));
-
-      // ✅ Only push when login is successful
+    if (username === "user" && password === "userpass") {
       router.push("/dashboarduser");
-      // eslint-disable-next-line @typescript-eslint/no-unused-vars
-    } catch (err) {
-      setError("Server error, please try again later");
     }
+    if (username === "admin" && password === "adminpass") {
+      router.push("/dashboardadmin");
+    }
+
+    if (username === "driver" && password === "driverpass") {
+      router.push("/dashboarddriver");
+    }
+    // try {
+    //   const res = await fetch("http://localhost:5000/auth/login", {
+    //     method: "POST",
+    //     headers: { "Content-Type": "application/json" },
+    //     body: JSON.stringify({ username, password }),
+    //   });
+
+    //   if (!res.ok) {
+    //     setError("Invalid username or password");
+    //     return; // ❌ stop here, no redirect
+    //   }
+
+    //   const data = await res.json();
+
+    //   // Save USER_ID in localStorage
+    //   localStorage.setItem("user", JSON.stringify(data));
+
+    //   // ✅ Only push when login is successful
+    //   router.push("/dashboarduser");
+    //   // eslint-disable-next-line @typescript-eslint/no-unused-vars
+    // } catch (err) {
+    //   setError("Server error, please try again later");
+    // }
   };
 
   return (
@@ -82,6 +92,12 @@ export const LoginForm = () => {
         >
           Login
         </button>
+
+        <ul>
+          <li className="text-center text-sm mt-4">admin: admin / adminpass</li>
+          <li className="text-center text-sm">user: user / userpass</li>
+          <li className="text-center text-sm">driver: driver / driverpass</li>
+        </ul>
       </div>
     </form>
   );

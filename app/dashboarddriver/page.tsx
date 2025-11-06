@@ -4,7 +4,7 @@ const DriverDashboard = () => {
   return (
     <div className="flex min-h-screen bg-gray-100">
       {/* Sidebar */}
-      <aside className="w-16 bg-white shadow-lg p-4 flex flex-col items-center justify-start py-6 hidden md:flex">
+      <aside className="w-16 bg-white shadow-lg p-4 flex flex-col items-center justify-start py-6  md:flex">
         <div className="space-y-6">
           {/* Icons and Navigation - placeholders */}
           <div className="w-10 h-10 bg-gray-800 rounded-lg"></div>
