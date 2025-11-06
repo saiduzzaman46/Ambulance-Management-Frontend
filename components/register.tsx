@@ -68,6 +68,7 @@ export const RegisterForm = () => {
         password: "",
         confirmPassword: "",
       });
+      // eslint-disable-next-line @typescript-eslint/no-explicit-any
     } catch (err: any) {
       console.log(err);
       setMessage(err.response?.data?.message || "Registration failed");

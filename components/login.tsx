@@ -36,6 +36,7 @@ export const LoginForm = () => {
 
       // ✅ Only push when login is successful
       router.push("/dashboarduser");
+      // eslint-disable-next-line @typescript-eslint/no-unused-vars
     } catch (err) {
       setError("Server error, please try again later");
     }
