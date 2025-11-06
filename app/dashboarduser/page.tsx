@@ -1,18 +1,22 @@
 "use client";
 
-import Link from "next/link";
 import { useState, useEffect } from "react";
 import Swal from "sweetalert2";
 import PaymentModal from "./payment/page";
 
 const Dashboard = () => {
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const [currentBooking, setCurrentBooking] = useState<any>(null);
-  const [recentBookings, setRecentBookings] = useState<any[]>([]);
-  const [paymentHistory, setPaymentHistory] = useState<any[]>([]);
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  const [recentBookings] = useState<any[]>([]);
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  const [paymentHistory] = useState<any[]>([]);
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const [selectedAmbulance, setSelectedAmbulance] = useState<any>(null);
   const [pickupLocation, setPickupLocation] = useState("");
   const [dropoffLocation, setDropoffLocation] = useState("");
   const [estimates, setEstimates] = useState({ fare: 0, time: 0, distance: 0 });
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const [user, setUser] = useState<any>(null);
   const [isPaymentOpen, setIsPaymentOpen] = useState(false);
 
@@ -70,6 +74,7 @@ const Dashboard = () => {
   }, []);
 
   // 👉 Handle ambulance selection (fetch fare + time from backend)
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const handleAmbulanceSelect = async (ambulance: any) => {
     setSelectedAmbulance(ambulance);
 
