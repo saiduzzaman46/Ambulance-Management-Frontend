@@ -1,3 +1,4 @@
+/* eslint-disable react/no-unescaped-entities */
 "use client";
 
 import Link from "next/link";
@@ -46,7 +47,7 @@ const LandingPage = () => {
                   isScrolled ? "text-red-600" : "text-white"
                 }`}
               >
-                Rescue<span className="font-light">Ambulance</span>
+                MediRide
               </span>
             </div>
           </div>
@@ -446,7 +447,7 @@ const LandingPage = () => {
                   />
                 </svg>
               </div>
-              RescueAmbulance
+              MediRide
             </h3>
             <p className="text-gray-400 mb-4">
               Providing reliable emergency medical transportation services 24
@@ -639,7 +640,7 @@ const LandingPage = () => {
                     d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
                   />
                 </svg>
-                <span className="text-gray-400">help@rescueambulance.com</span>
+                <span className="text-gray-400">help@mediride.com</span>
               </li>
             </ul>
           </div>

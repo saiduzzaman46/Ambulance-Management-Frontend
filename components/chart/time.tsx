@@ -10,8 +10,6 @@ import {
   YAxis,
   Tooltip,
   Legend,
-  BarChart,
-  Bar,
 } from "recharts";
 
 // Type for response time chart
@@ -21,10 +19,6 @@ type ResponseData = {
 };
 
 // Type for daily trips chart
-type DailyTripsData = {
-  date: string;
-  trips: number;
-};
 
 export const ResponseTimeChart = () => {
   const [data, setData] = useState<ResponseData[]>([]);
@@ -38,6 +32,14 @@ export const ResponseTimeChart = () => {
       { date: "2025-09-13", responseTime: 10 },
       { date: "2025-09-14", responseTime: 7 },
       { date: "2025-09-15", responseTime: 9 },
+      { date: "2025-09-16", responseTime: 11 },
+      { date: "2025-09-17", responseTime: 14 },
+      { date: "2025-09-18", responseTime: 6 },
+      { date: "2025-09-19", responseTime: 13 },
+      { date: "2025-09-20", responseTime: 10 },
+      { date: "2025-09-21", responseTime: 8 },
+      { date: "2025-09-22", responseTime: 12 },
+      { date: "2025-09-23", responseTime: 9 },
     ];
     setData(mockData);
   }, []);
@@ -68,44 +70,6 @@ export const ResponseTimeChart = () => {
           strokeWidth={2}
         />
       </LineChart>
-    </ResponsiveContainer>
-  );
-};
-
-export const DailyTripsChart = () => {
-  const [data, setData] = useState<DailyTripsData[]>([]);
-
-  useEffect(() => {
-    // Mock API data
-    const mockData: DailyTripsData[] = [
-      { date: "2025-09-10", trips: 5 },
-      { date: "2025-09-11", trips: 8 },
-      { date: "2025-09-12", trips: 6 },
-      { date: "2025-09-13", trips: 10 },
-      { date: "2025-09-14", trips: 4 },
-      { date: "2025-09-15", trips: 7 },
-    ];
-    setData(mockData);
-  }, []);
-
-  return (
-    <ResponsiveContainer width="100%" height="100%">
-      <BarChart data={data} margin={{ top: 10, right: 20, left: 0, bottom: 5 }}>
-        <CartesianGrid stroke="#eee" strokeDasharray="5 5" />
-        <XAxis dataKey="date" tick={{ fontSize: 12 }} />
-        <YAxis
-          tick={{ fontSize: 12 }}
-          label={{
-            value: "Trips",
-            angle: -90,
-            position: "insideLeft",
-            fontSize: 12,
-          }}
-        />
-        <Tooltip />
-        <Legend />
-        <Bar dataKey="trips" fill="#10b981" />
-      </BarChart>
     </ResponsiveContainer>
   );
 };

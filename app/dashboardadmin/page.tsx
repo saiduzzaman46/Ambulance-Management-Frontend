@@ -1,5 +1,7 @@
 "use client";
 
+import { DailyTripsChart } from "@/components/chart/dailytrip";
+import { ResponseTimeChart } from "@/components/chart/time";
 import { useEffect, useState } from "react";
 
 export default function Dashboard() {
@@ -14,6 +16,7 @@ export default function Dashboard() {
       const fetchTotals = async () => {
         const response = await fetch("http://localhost:5000/auth/totals");
         const data = await response.json();
+        // console.log("Fetched totals:", data);
         setTotals(data);
       };
       fetchTotals();
@@ -81,18 +84,16 @@ export default function Dashboard() {
             <h3 className="text-sm font-medium text-gray-500 mb-2">
               Response Time (minutes)
             </h3>
-            <div className="bg-gray-100 h-48 rounded-md flex items-center justify-center">
-              {/* Placeholder for the line chart */}
-              <p className="text-gray-400">Line chart placeholder</p>
+            <div className="bg-gray-100 h-48 rounded-md p-2">
+              <ResponseTimeChart />
             </div>
           </div>
           <div>
             <h3 className="text-sm font-medium text-gray-500 mb-2">
               Daily Trips
             </h3>
-            <div className="bg-gray-100 h-48 rounded-md flex items-center justify-center">
-              {/* Placeholder for the bar chart */}
-              <p className="text-gray-400">Bar chart placeholder</p>
+            <div className="bg-gray-100 h-48 rounded-md p-2">
+              <DailyTripsChart />
             </div>
           </div>
         </div>

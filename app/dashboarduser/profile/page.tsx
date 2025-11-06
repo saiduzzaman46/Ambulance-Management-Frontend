@@ -1,4 +1,5 @@
 "use client";
+import Link from "next/link";
 import { useEffect, useState } from "react";
 
 export default function ProfilePage() {
@@ -137,9 +138,12 @@ export default function ProfilePage() {
           <button className="flex-1 bg-gradient-to-r from-blue-500 to-indigo-600 text-white py-3 rounded-xl font-semibold shadow-lg hover:from-blue-600 hover:to-indigo-700 transition-all duration-200">
             Edit Profile
           </button>
-          <button className="flex-1 bg-gradient-to-r from-gray-500 to-gray-700 text-white py-3 rounded-xl font-semibold shadow-lg hover:from-gray-600 hover:to-gray-800 transition-all duration-200">
+          <Link
+            href="/dashboarduser"
+            className=" text-center flex-1 bg-gradient-to-r from-gray-500 to-gray-700 text-white py-3 rounded-xl font-semibold shadow-lg hover:from-gray-600 hover:to-gray-800 transition-all duration-200"
+          >
             Back to Dashboard
-          </button>
+          </Link>
         </div>
       </div>
     </div>
